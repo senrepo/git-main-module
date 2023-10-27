@@ -1,3 +1,27 @@
 commit 2
 
 git submodule add https://github.com/senrepo/git-sub-module.git
+
+C:\SenRepo\git-main-module\git-sub-module>git log --oneline
+9d16b16 (HEAD -> main, origin/main, origin/HEAD) commit 3
+647fa69 commit 2
+b84a1be commit 1
+150fefc Initial commit
+
+C:\SenRepo\git-main-module\git-sub-module>git reset --hard b84a1be
+
+C:\SenRepo\git-main-module\git-sub-module>git checkout -b revert-to-commit1
+Switched to a new branch 'revert-to-commit1'
+
+C:\SenRepo\git-main-module\git-sub-module>git add .
+
+C:\SenRepo\git-main-module\git-sub-module>git push --set-upstream origin revert-to-commit1
+
+C:\SenRepo\git-main-module>git status
+   modified:   git-sub-module (new commits)
+
+C:\SenRepo\git-main-module>git add .
+
+C:\SenRepo\git-main-module>git commit -m "revert to submodule commit1"
+
+C:\SenRepo\git-main-module>git push
